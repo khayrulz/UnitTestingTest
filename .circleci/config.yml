@@ -18,6 +18,6 @@ jobs:
       - android/save-build-cache
       
 workflows:
-  test-and-build:
+  run-unit-test:
     jobs:
       - unit-test
