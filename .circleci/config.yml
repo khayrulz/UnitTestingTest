@@ -9,16 +9,9 @@ jobs:
       name: android/android-machine
       resource-class: xlarge
     steps:
-      - checkout
-      - *setup_environment
-      - *restore_gradle_cache
-      - *restore_gems_cache
-      - *bundle_dependencies
-      - *ruby_dependencies
-      - *android_dependencies
-      - *save_gradle_cache
-      - *save_gems_cache
-      - *fastlane_dependencies
+      checkout
+      - android/restore-gradle-cache
+      - android/restore-build-cache
       - run:
           name: Run Unit Test
           command: bundle exec fastlane tests
