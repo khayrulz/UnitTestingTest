@@ -26,4 +26,16 @@ jobs:
 workflows:
   test-and-build:
     jobs:
-      - unit-test
+      - hold_test_unit:
+          filters:
+            branches:
+              ignore:
+                - main
+          type: approval
+      - unit-test:
+          filters:
+            branches:
+              ignore:
+                - main
+          requires:
+            - hold_test_unit
