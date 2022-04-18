@@ -24,7 +24,7 @@ jobs:
           destination: /mapping/
       
 workflows:
-  hold_unit_test:
+  run-unit-test:
     jobs:
       - hold_test_unit:
           filters:
