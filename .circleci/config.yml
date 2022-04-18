@@ -24,7 +24,7 @@ jobs:
           destination: /mapping/
       
 workflows:
-  test-and-build:
+  hold_unit_test:
     jobs:
       - hold_test_unit:
           filters:
